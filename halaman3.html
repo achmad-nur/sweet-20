@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman 2</title>
+    <style>
+        /* Styling umum */
+        body {
+            background-color: #f8e9dd;
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .photo {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .text-box {
+            width: 100%;
+            max-height: 200px;
+            overflow-y: auto;
+            scroll-behavior: smooth;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .text {
+            font-size: 18px;
+            font-weight: bold;
+            color: #5a3e2b;
+            line-height: 1.8;
+        }
+
+        /* Tombol menuju halaman 3 dengan animasi */
+        .next-page {
+            margin-top: 10px;
+            background-color: #ffb6c1;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: white;
+            display: inline-block;
+            transition: all 0.3s ease-in-out;
+            transform: scale(1);
+        }
+
+        .next-page:hover {
+            background-color: #ff91a4;
+            transform: scale(1.1);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .next-page:active {
+            transform: scale(0.95);
+        }
+
+        /* Styling untuk video */
+        .video-container {
+            margin-top: 20px;
+            width: 100%;
+            max-width: 560px;
+        }
+
+        .video-container iframe {
+            width: 5%;
+            height: 1px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="foto-kita.png" alt="Foto Kita Berdua" class="photo">
+
+        <div class="text-box" id="scrollBox">
+            <p class="text">
+                Happy Sweet 20, Ayy ✨... <br>
+                Selamat bertambah usia, panjang umur dan sehat selalu.... <br>
+                Di umur yang baru ini, harus yakin ya sama apa yang akan dihadapi ke depannya.... <br>
+                Jangan pernah pesimis, jalani aja kehidupanmu seperti biasa.... <br>
+                Ya, seperti biasa… yang mana nanti bakal selesai juga.... <br>
+                ... <br>
+                Semangat kuliahnya! Aku tau makin berat sekarang,... <br>
+                gapapa ngeluh, tapi jangan lupa tetap diselesain.... <br>
+                Kamu kuat, kamu hebat.... <br>
+                ... <br>
+                Dan satu lagi…... <br>
+                Dikurangin overthinking-nya, ya. 😊💕... <br>
+                Aku selalu di sini, buat nemenin kamu. 🤍✨... <br>
+                Oiyaa satu lagiii, doain aku cepet dapet kerja yaaa ... <br>
+                LOVE YOUU AYYY 💕💕💕 ... <br>
+            </p>
+        </div>
+
+        <!-- Video YouTube -->
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/mAJa4SF_VVI?autoplay=1&mute=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        function autoScroll() {
+            let box = document.getElementById("scrollBox");
+            let scrollHeight = box.scrollHeight - box.clientHeight;
+            let targetScroll = scrollHeight * 0.75; // Posisikan seperempat dari bawah foto
+            let scrollAmount = 0;
+
+            let scrollInterval = setInterval(() => {
+                box.scrollTop += 2;
+                scrollAmount += 2;
+                if (scrollAmount >= targetScroll) {
+                    clearInterval(scrollInterval);
+                }
+            }, 50);
+        }
+
+        window.onload = function () {
+            autoScroll();
+        };
+    </script>
+
+</body>
+
+</html>
